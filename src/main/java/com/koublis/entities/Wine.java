@@ -118,4 +118,18 @@ public class Wine {
     public void setNbBouteillesStock(long nbBouteillesStock) {
         this.nbBouteillesStock = nbBouteillesStock;
     }
+
+    @Override
+    public String toString() {
+        return "Wine{" +
+                "id=" + id +
+                ", appellation='" + appellation + '\'' +
+                ", nomChateau='" + nomChateau + '\'' +
+                ", type='" + type + '\'' +
+                ", millesime=" + millesime +
+                ", nbBouteillesAchetees=" + nbBouteillesAchetees +
+                ", destockage=" + destockage +
+                ", nbBouteillesStock=" + nbBouteillesStock +
+                '}';
+    }
 }

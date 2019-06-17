@@ -19,8 +19,8 @@ public class WineController {
         return wineRepository.findAll();
     }
 
-    @PostMapping("/addWine")
-    void addWine(@RequestBody Wine wine) {
+    @PostMapping("/saveWine")
+    void saveWine(@RequestBody Wine wine) {
         wineRepository.save(wine);
     }
 }
