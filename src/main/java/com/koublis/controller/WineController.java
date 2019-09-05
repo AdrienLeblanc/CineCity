@@ -23,4 +23,9 @@ public class WineController {
     void saveWine(@RequestBody Wine wine) {
         wineRepository.save(wine);
     }
+
+    @PostMapping("/deleteWine")
+    void deleteWine(@RequestBody Wine wine) {
+        wineRepository.delete(wine);
+    }
 }

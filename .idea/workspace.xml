@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ed11f5ed-633e-4107-917a-338d2d4ecea6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/koublis/controller/WineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/koublis/controller/WineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/koublis/controller/WineController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/koublis/controller/WineController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +26,7 @@
   <component name="ProjectId" id="1QKNY6XrZ4lQ1pN4y3a6lnGEzIB" />
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
