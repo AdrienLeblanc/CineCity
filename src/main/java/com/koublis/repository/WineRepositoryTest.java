@@ -23,8 +23,8 @@ public class WineRepositoryTest {
 
     @Before
     public void setUp() {
-        Wine wine1= new Wine(23, "Beaujolais");
-        Wine wine2= new Wine(38, "St-Maritain");
+        Wine wine1 = new Wine(23, "Beaujolais");
+        Wine wine2 = new Wine(38, "St-Maritain");
 
         //save wine, verify has Appellation value after save
 
@@ -37,7 +37,7 @@ public class WineRepositoryTest {
     }
 
     @Test
-    public void testFetchData(){
+    public void testFetchData() {
 
         /*Test data retrieval*/
         List<Wine> wineBeaujolais = wineRepository.findByAppellation("Beaujolais");
@@ -46,7 +46,7 @@ public class WineRepositoryTest {
         /*Get all products, list should only have two*/
         Iterable<Wine> wines = wineRepository.findAll();
         int count = 0;
-        for(Wine p : wines){
+        for (Wine ignored : wines) {
             count++;
         }
         assertEquals(count, 2);
