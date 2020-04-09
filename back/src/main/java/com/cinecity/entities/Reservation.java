@@ -19,20 +19,23 @@ public class Reservation implements Serializable {
     // https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/
     private Show show;
 
-    private long nbPlaces;
+    private Long nbPlaces;
 
-    public Reservation(long id, User user, Show show, long nbPlaces) {
+    public Reservation() {
+    }
+
+    public Reservation(Long id, User user, Show show, Long nbPlaces) {
         this.id = id;
         this.user = user;
         this.show = show;
         this.nbPlaces = nbPlaces;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -52,11 +55,11 @@ public class Reservation implements Serializable {
         this.show = show;
     }
 
-    public long getNbPlaces() {
+    public Long getNbPlaces() {
         return nbPlaces;
     }
 
-    public void setNbPlaces(long nbPlaces) {
+    public void setNbPlaces(Long nbPlaces) {
         this.nbPlaces = nbPlaces;
     }
 

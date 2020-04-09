@@ -20,7 +20,10 @@ public class User implements Serializable {
 
     private String password;
 
-    public User(long id, String firstname, String lastname, String login, String password) {
+    public User() {
+    }
+
+    public User(Long id, String firstname, String lastname, String login, String password) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -28,11 +31,11 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

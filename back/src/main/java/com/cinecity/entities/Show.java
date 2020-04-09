@@ -24,7 +24,10 @@ public class Show implements Serializable {
 
     private Long price;
 
-    public Show(long id, City city, Date start_date, Date end_date, long movie_id, long price) {
+    public Show() {
+    }
+
+    public Show(Long id, City city, Date start_date, Date end_date, Long movie_id, Long price) {
         this.id = id;
         this.city = city;
         this.start_date = start_date;
@@ -33,11 +36,11 @@ public class Show implements Serializable {
         this.price = price;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -65,19 +68,19 @@ public class Show implements Serializable {
         this.end_date = end_date;
     }
 
-    public long getMovie_id() {
+    public Long getMovie_id() {
         return movie_id;
     }
 
-    public void setMovie_id(long movie_id) {
+    public void setMovie_id(Long movie_id) {
         this.movie_id = movie_id;
     }
 
-    public long getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 

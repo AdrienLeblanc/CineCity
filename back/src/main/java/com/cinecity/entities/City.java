@@ -18,18 +18,21 @@ public class City implements Serializable {
 
     private String country;
 
-    public City(long id, String name, String postalCode, String country) {
+    public City() {
+    }
+
+    public City(Long id, String name, String postalCode, String country) {
         this.id = id;
         this.name = name;
         this.postalCode = postalCode;
         this.country = country;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
