@@ -1,31 +1,31 @@
 package com.cinecity.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "reservations")
-public class Reservation {
+public class Reservation implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private long id;
 
     @ManyToOne
     private User user;
 
     @ManyToOne
+    // https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/
     private Show show;
 
-    @Column(name = "nb_places")
-    private long nb_places;
+    private long nbPlaces;
 
-    public Reservation(long id, User user, Show show, long nb_places) {
+    public Reservation(long id, User user, Show show, long nbPlaces) {
         this.id = id;
         this.user = user;
         this.show = show;
-        this.nb_places = nb_places;
+        this.nbPlaces = nbPlaces;
     }
 
     public long getId() {
@@ -52,12 +52,12 @@ public class Reservation {
         this.show = show;
     }
 
-    public long getNb_places() {
-        return nb_places;
+    public long getNbPlaces() {
+        return nbPlaces;
     }
 
-    public void setNb_places(long nb_places) {
-        this.nb_places = nb_places;
+    public void setNbPlaces(long nbPlaces) {
+        this.nbPlaces = nbPlaces;
     }
 
     @Override
@@ -66,7 +66,7 @@ public class Reservation {
                 "id=" + id +
                 ", user=" + user +
                 ", show=" + show +
-                ", nb_places=" + nb_places +
+                ", nb_places=" + nbPlaces +
                 '}';
     }
 
@@ -75,13 +75,13 @@ public class Reservation {
         if (this == o) return true;
         if (!(o instanceof Reservation)) return false;
         Reservation that = (Reservation) o;
-        return getNb_places() == that.getNb_places() &&
+        return getNbPlaces() == that.getNbPlaces() &&
                 Objects.equals(getUser(), that.getUser()) &&
                 Objects.equals(getShow(), that.getShow());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getUser(), getShow(), getNb_places());
+        return Objects.hash(getUser(), getShow(), getNbPlaces());
     }
 }

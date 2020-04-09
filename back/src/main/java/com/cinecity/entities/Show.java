@@ -1,31 +1,29 @@
 package com.cinecity.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Objects;
 
 @Entity
 @Table(name = "shows")
-public class Show {
+public class Show implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private long id;
 
     @ManyToOne
     private City city;
 
-    @Column(name = "start_date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date start_date;
 
-    @Column(name = "end_date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date end_date;
 
-    @Column(name = "movie_id")
     private long movie_id;
 
-    @Column(name = "price")
     private long price;
 
     public Show(long id, City city, Date start_date, Date end_date, long movie_id, long price) {

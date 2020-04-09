@@ -1,27 +1,23 @@
 package com.cinecity.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private long id;
 
-    @Column(name = "firstname")
     private String firstname;
 
-    @Column(name = "lastname")
     private String lastname;
 
-    @Column(name = "type")
     private String login;
 
-    @Column(name = "password")
     private String password;
 
     public User(long id, String firstname, String lastname, String login, String password) {
