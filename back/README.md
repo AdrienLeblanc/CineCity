@@ -1,3 +1,3 @@
 # DevOps_Projet
 
-![Image du schéma SQL](https://imgur.com/a/PYWMdnp)
+![Image du schéma SQL](https://i.imgur.com/XPf2xVN.png)
