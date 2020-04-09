@@ -4,6 +4,7 @@ import com.cinecity.entities.User;
 import com.cinecity.exception.ResourceNotFoundException;
 import com.cinecity.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -34,6 +35,14 @@ public class UserController {
             user.setLogin(userRequest.getLogin());
             user.setPassword(userRequest.getPassword());
             return userRepository.save(user);
+        }).orElseThrow(() -> new ResourceNotFoundException("UserId " + userId + " not found"));
+    }
+
+    @DeleteMapping("/users/{userId}")
+    public ResponseEntity<?> deleteUser(@PathVariable Long userId) {
+        return userRepository.findById(userId).map(user -> {
+            userRepository.delete(user);
+            return ResponseEntity.ok().build();
         }).orElseThrow(() -> new ResourceNotFoundException("UserId " + userId + " not found"));
     }
 }
