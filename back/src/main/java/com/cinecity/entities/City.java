@@ -12,13 +12,13 @@ public class City {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "firstname")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "lastname")
+    @Column(name = "postal_code")
     private String postal_code;
 
-    @Column(name = "type")
+    @Column(name = "country")
     private String country;
 
     public City(long id, String name, String postal_code, String country) {
