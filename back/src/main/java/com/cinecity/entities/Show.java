@@ -10,8 +10,8 @@ import java.util.Objects;
 public class Show implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @ManyToOne
     private City city;
@@ -22,9 +22,9 @@ public class Show implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date end_date;
 
-    private long movie_id;
+    private Long movie_id;
 
-    private long price;
+    private Long price;
 
     public Show(long id, City city, Date start_date, Date end_date, long movie_id, long price) {
         this.id = id;
