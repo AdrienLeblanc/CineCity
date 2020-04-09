@@ -16,10 +16,8 @@ public class Show implements Serializable {
     @ManyToOne
     private City city;
 
-    @Temporal(TemporalType.TIMESTAMP)
     private Date start_date;
 
-    @Temporal(TemporalType.TIMESTAMP)
     private Date end_date;
 
     private Long movie_id;
