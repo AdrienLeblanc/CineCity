@@ -24,7 +24,8 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    public User() {}
+    public User() {
+    }
 
     public User(long id, String firstname, String lastname, String login, String password) {
         this.id = id;
@@ -90,7 +91,7 @@ public class User {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
-        return  Objects.equals(getFirstname(), user.getFirstname()) &&
+        return Objects.equals(getFirstname(), user.getFirstname()) &&
                 Objects.equals(getLastname(), user.getLastname()) &&
                 Objects.equals(getLogin(), user.getLogin()) &&
                 Objects.equals(getPassword(), user.getPassword());
