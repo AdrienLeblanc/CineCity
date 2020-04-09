@@ -34,6 +34,6 @@ public class UserController {
             user.setLogin(userRequest.getLogin());
             user.setPassword(userRequest.getPassword());
             return userRepository.save(user);
-        }).orElseThrow(() -> new ResourceNotFoundException("PostId " + userId + " not found"));
+        }).orElseThrow(() -> new ResourceNotFoundException("UserId " + userId + " not found"));
     }
 }
