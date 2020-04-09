@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed11f5ed-633e-4107-917a-338d2d4ecea6" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="ed11f5ed-633e-4107-917a-338d2d4ecea6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinecity/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinecity/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinecity/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinecity/controller/WineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinecity/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinecity/entities/Wine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinecity/entities/Wine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinecity/repository/WineRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinecity/repository/WineRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinecity/repository/WineRepositoryTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,20 +32,9 @@
   <component name="ProjectId" id="1QKNY6XrZ4lQ1pN4y3a6lnGEzIB" />
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RunManager" selected="Maven.server">
     <configuration name="Clean Install" type="MavenRunConfiguration" factoryName="Maven">
@@ -120,6 +119,18 @@
       <item itemvalue="Maven.Clean Install" />
     </list>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -145,5 +156,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="992" y="416" key="MultipleFileMergeDialog" timestamp="1586424833541">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="992" y="416" key="MultipleFileMergeDialog/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1586424833541" />
+    <state x="781" y="343" key="SettingsEditor" timestamp="1586425179233">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="781" y="343" key="SettingsEditor/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1586425179233" />
+    <state x="976" y="298" width="607" height="804" key="find.popup" timestamp="1586425191469">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="976" y="298" width="607" height="804" key="find.popup/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1586425191469" />
   </component>
 </project>

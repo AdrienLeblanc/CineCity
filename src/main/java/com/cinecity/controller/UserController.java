@@ -1,7 +1,7 @@
-package com.koublis.controller;
+package com.cinecity.controller;
 
-import com.koublis.entities.Wine;
-import com.koublis.repository.WineRepository;
+import com.cinecity.entities.User;
+import com.cinecity.repository.WineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,23 +9,23 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-public class WineController {
+public class UserController {
 
     @Autowired
     private WineRepository wineRepository;
 
     @GetMapping("/wines")
-    public List<Wine> findAll() {
+    public List<User> findAll() {
         return wineRepository.findAll();
     }
 
     @PostMapping("/saveWine")
-    void saveWine(@RequestBody Wine wine) {
+    void saveWine(@RequestBody User wine) {
         wineRepository.save(wine);
     }
 
     @PostMapping("/deleteWine")
-    void deleteWine(@RequestBody Wine wine) {
+    void deleteWine(@RequestBody User wine) {
         wineRepository.delete(wine);
     }
 }

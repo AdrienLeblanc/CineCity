@@ -1,6 +1,6 @@
-package com.koublis.repository;
+package com.cinecity.repository;
 
-import com.koublis.entities.Wine;
+import com.cinecity.entities.Wine;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

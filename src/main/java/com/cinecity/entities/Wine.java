@@ -1,10 +1,10 @@
-package com.koublis.entities;
+package com.cinecity.entities;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "WINE")
-public class Wine {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

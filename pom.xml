@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>koublis-backend</artifactId>
+    <artifactId>cinecity-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Cave koublis</name>
-    <description>Cave des koublis</description>
+    <name>CineCity</name>
+    <description>Projet DevOps</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -19,7 +19,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>com.koublis.Application</start-class>
+        <start-class>com.cinecity.Application</start-class>
         <java.version>1.8</java.version>
     </properties>
 
