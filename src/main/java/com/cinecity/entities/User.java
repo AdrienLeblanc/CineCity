@@ -1,9 +1,10 @@
 package com.cinecity.entities;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
-@Table(name = "WINE")
+@Table(name = "users")
 public class User {
 
     @Id
@@ -11,48 +12,26 @@ public class User {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "appellation")
-    private String appellation;
+    @Column(name = "firstname")
+    private String firstname;
 
-    @Column(name = "nomChateau")
-    private String nomChateau;
+    @Column(name = "lastname")
+    private String lastname;
 
     @Column(name = "type")
-    private String type;
+    private String login;
 
-    @Column(name = "millesime")
-    private long millesime;
+    @Column(name = "password")
+    private String password;
 
-    @Column(name = "nbBouteillesAchetees")
-    private long nbBouteillesAchetees;
+    public User() {}
 
-    @Column(name = "destockage")
-    private long destockage;
-
-    @Column(name = "nbBouteillesStock")
-    private long nbBouteillesStock;
-
-    public Wine() {
-    }
-
-    public Wine(long id) {
+    public User(long id, String firstname, String lastname, String login, String password) {
         this.id = id;
-    }
-
-    public Wine(long id, String appellation, String nomChateau, String type, long millesime, long nbBouteillesAchetees, long destockage, long nbBouteillesStock) {
-        this.id = id;
-        this.appellation = appellation;
-        this.nomChateau = nomChateau;
-        this.type = type;
-        this.millesime = millesime;
-        this.nbBouteillesAchetees = nbBouteillesAchetees;
-        this.destockage = destockage;
-        this.nbBouteillesStock = nbBouteillesStock;
-    }
-
-    public Wine(long id, String appellation) {
-        this.id = id;
-        this.appellation = appellation;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.login = login;
+        this.password = password;
     }
 
     public long getId() {
@@ -63,73 +42,62 @@ public class User {
         this.id = id;
     }
 
-    public String getAppellation() {
-        return appellation;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setAppellation(String appellation) {
-        this.appellation = appellation;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getNomChateau() {
-        return nomChateau;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setNomChateau(String nomChateau) {
-        this.nomChateau = nomChateau;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getType() {
-        return type;
+    public String getLogin() {
+        return login;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public long getMillesime() {
-        return millesime;
+    public String getPassword() {
+        return password;
     }
 
-    public void setMillesime(long millesime) {
-        this.millesime = millesime;
-    }
-
-    public long getNbBouteillesAchetees() {
-        return nbBouteillesAchetees;
-    }
-
-    public void setNbBouteillesAchetees(long nbBouteillesAchetees) {
-        this.nbBouteillesAchetees = nbBouteillesAchetees;
-    }
-
-    public long getDestockage() {
-        return destockage;
-    }
-
-    public void setDestockage(long destockage) {
-        this.destockage = destockage;
-    }
-
-    public long getNbBouteillesStock() {
-        return nbBouteillesStock;
-    }
-
-    public void setNbBouteillesStock(long nbBouteillesStock) {
-        this.nbBouteillesStock = nbBouteillesStock;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
     public String toString() {
-        return "Wine{" +
+        return "User{" +
                 "id=" + id +
-                ", appellation='" + appellation + '\'' +
-                ", nomChateau='" + nomChateau + '\'' +
-                ", type='" + type + '\'' +
-                ", millesime=" + millesime +
-                ", nbBouteillesAchetees=" + nbBouteillesAchetees +
-                ", destockage=" + destockage +
-                ", nbBouteillesStock=" + nbBouteillesStock +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+        User user = (User) o;
+        return  Objects.equals(getFirstname(), user.getFirstname()) &&
+                Objects.equals(getLastname(), user.getLastname()) &&
+                Objects.equals(getLogin(), user.getLogin()) &&
+                Objects.equals(getPassword(), user.getPassword());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFirstname(), getLastname(), getLogin(), getPassword());
     }
 }
