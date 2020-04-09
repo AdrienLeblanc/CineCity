@@ -24,9 +24,6 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    public User() {
-    }
-
     public User(long id, String firstname, String lastname, String login, String password) {
         this.id = id;
         this.firstname = firstname;
