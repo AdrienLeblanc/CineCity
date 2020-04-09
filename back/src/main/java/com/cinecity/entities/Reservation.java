@@ -12,19 +12,19 @@ public class Reservation {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "user_id")
-    private long user_id;
+    @ManyToOne
+    private User user;
 
-    @Column(name = "show_id")
-    private long show_id;
+    @ManyToOne
+    private Show show;
 
     @Column(name = "nb_places")
     private long nb_places;
 
-    public Reservation(long id, long user_id, long show_id, long nb_places) {
+    public Reservation(long id, User user, Show show, long nb_places) {
         this.id = id;
-        this.user_id = user_id;
-        this.show_id = show_id;
+        this.user = user;
+        this.show = show;
         this.nb_places = nb_places;
     }
 
@@ -36,20 +36,20 @@ public class Reservation {
         this.id = id;
     }
 
-    public long getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser_id(long user_id) {
-        this.user_id = user_id;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public long getShow_id() {
-        return show_id;
+    public Show getShow() {
+        return show;
     }
 
-    public void setShow_id(long show_id) {
-        this.show_id = show_id;
+    public void setShow(Show show) {
+        this.show = show;
     }
 
     public long getNb_places() {
@@ -64,8 +64,8 @@ public class Reservation {
     public String toString() {
         return "Reservation{" +
                 "id=" + id +
-                ", user_id=" + user_id +
-                ", show_id=" + show_id +
+                ", user=" + user +
+                ", show=" + show +
                 ", nb_places=" + nb_places +
                 '}';
     }
@@ -75,13 +75,13 @@ public class Reservation {
         if (this == o) return true;
         if (!(o instanceof Reservation)) return false;
         Reservation that = (Reservation) o;
-        return getUser_id() == that.getUser_id() &&
-                getShow_id() == that.getShow_id() &&
-                getNb_places() == that.getNb_places();
+        return getNb_places() == that.getNb_places() &&
+                Objects.equals(getUser(), that.getUser()) &&
+                Objects.equals(getShow(), that.getShow());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getUser_id(), getShow_id(), getNb_places());
+        return Objects.hash(getUser(), getShow(), getNb_places());
     }
 }

@@ -13,8 +13,8 @@ public class Show {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "city_id")
-    private long city_id;
+    @ManyToOne
+    private City city;
 
     @Column(name = "start_date")
     private Date start_date;
@@ -28,9 +28,9 @@ public class Show {
     @Column(name = "price")
     private long price;
 
-    public Show(long id, long city_id, Date start_date, Date end_date, long movie_id, long price) {
+    public Show(long id, City city, Date start_date, Date end_date, long movie_id, long price) {
         this.id = id;
-        this.city_id = city_id;
+        this.city = city;
         this.start_date = start_date;
         this.end_date = end_date;
         this.movie_id = movie_id;
@@ -45,12 +45,12 @@ public class Show {
         this.id = id;
     }
 
-    public long getCity_id() {
-        return city_id;
+    public City getCity() {
+        return city;
     }
 
-    public void setCity_id(long city_id) {
-        this.city_id = city_id;
+    public void setCity(City city) {
+        this.city = city;
     }
 
     public Date getStart_date() {
@@ -89,7 +89,7 @@ public class Show {
     public String toString() {
         return "Show{" +
                 "id=" + id +
-                ", city_id=" + city_id +
+                ", city=" + city +
                 ", start_date=" + start_date +
                 ", end_date=" + end_date +
                 ", movie_id=" + movie_id +
@@ -102,15 +102,15 @@ public class Show {
         if (this == o) return true;
         if (!(o instanceof Show)) return false;
         Show show = (Show) o;
-        return getCity_id() == show.getCity_id() &&
-                getMovie_id() == show.getMovie_id() &&
+        return getMovie_id() == show.getMovie_id() &&
                 getPrice() == show.getPrice() &&
+                Objects.equals(getCity(), show.getCity()) &&
                 Objects.equals(getStart_date(), show.getStart_date()) &&
                 Objects.equals(getEnd_date(), show.getEnd_date());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getCity_id(), getStart_date(), getEnd_date(), getMovie_id(), getPrice());
+        return Objects.hash(getCity(), getStart_date(), getEnd_date(), getMovie_id(), getPrice());
     }
 }
