@@ -17,20 +17,19 @@ public class CityController {
     @Autowired
     private CityRepository cityRepository;
 
-    @GetMapping("/citys")
+    @GetMapping("/cities")
     public List<City> getAllCitys() {
         return cityRepository.findAll();
     }
 
-    @PostMapping("/citys")
+    @PostMapping("/cities")
     public City createCity(@Valid @RequestBody City city) {
         return cityRepository.save(city);
     }
 
-    @PutMapping("/citys/{cityId}")
+    @PutMapping("/cities/{cityId}")
     public City updateCity(@PathVariable Long cityId, @Valid @RequestBody City cityRequest) {
         return cityRepository.findById(cityId).map(city -> {
-            city.setId(cityRequest.getId());
             city.setName(cityRequest.getName());
             city.setPostalCode(cityRequest.getPostalCode());
             city.setCountry(cityRequest.getCountry());
@@ -38,7 +37,7 @@ public class CityController {
         }).orElseThrow(() -> new ResourceNotFoundException("CityId " + cityId + " not found"));
     }
 
-    @DeleteMapping("/citys/{cityId}")
+    @DeleteMapping("/cities/{cityId}")
     public ResponseEntity<?> deleteCity(@PathVariable Long cityId) {
         return cityRepository.findById(cityId).map(city -> {
             cityRepository.delete(city);

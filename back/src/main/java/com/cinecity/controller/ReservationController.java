@@ -30,7 +30,6 @@ public class ReservationController {
     @PutMapping("/reservations/{reservationId}")
     public Reservation updateReservation(@PathVariable Long reservationId, @Valid @RequestBody Reservation reservationRequest) {
         return reservationRepository.findById(reservationId).map(reservation -> {
-            reservation.setId(reservationRequest.getId());
             reservation.setUser(reservationRequest.getUser());
             reservation.setShow(reservationRequest.getShow());
             reservation.setNbPlaces(reservationRequest.getNbPlaces());

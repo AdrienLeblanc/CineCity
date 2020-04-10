@@ -30,7 +30,6 @@ public class ShowController {
     @PutMapping("/shows/{showId}")
     public Show updateShow(@PathVariable Long showId, @Valid @RequestBody Show showRequest) {
         return showRepository.findById(showId).map(show -> {
-            show.setId(showRequest.getId());
             show.setCity(showRequest.getCity());
             show.setStart_date(showRequest.getStart_date());
             show.setEnd_date(showRequest.getEnd_date());
