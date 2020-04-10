@@ -16,23 +16,23 @@ public class Show implements Serializable {
     @ManyToOne
     private City city;
 
-    private Date start_date;
+    private Date startDate;
 
-    private Date end_date;
+    private Date endDate;
 
-    private Long movie_id;
+    private Long movieId;
 
     private Long price;
 
     public Show() {
     }
 
-    public Show(Long id, City city, Date start_date, Date end_date, Long movie_id, Long price) {
+    public Show(Long id, City city, Date startDate, Date endDate, Long movieId, Long price) {
         this.id = id;
         this.city = city;
-        this.start_date = start_date;
-        this.end_date = end_date;
-        this.movie_id = movie_id;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.movieId = movieId;
         this.price = price;
     }
 
@@ -52,28 +52,28 @@ public class Show implements Serializable {
         this.city = city;
     }
 
-    public Date getStart_date() {
-        return start_date;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setStart_date(Date start_date) {
-        this.start_date = start_date;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public Date getEnd_date() {
-        return end_date;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setEnd_date(Date end_date) {
-        this.end_date = end_date;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
-    public Long getMovie_id() {
-        return movie_id;
+    public Long getMovieId() {
+        return movieId;
     }
 
-    public void setMovie_id(Long movie_id) {
-        this.movie_id = movie_id;
+    public void setMovieId(Long movieId) {
+        this.movieId = movieId;
     }
 
     public Long getPrice() {
@@ -89,9 +89,9 @@ public class Show implements Serializable {
         return "Show{" +
                 "id=" + id +
                 ", city=" + city +
-                ", start_date=" + start_date +
-                ", end_date=" + end_date +
-                ", movie_id=" + movie_id +
+                ", start_date=" + startDate +
+                ", end_date=" + endDate +
+                ", movie_id=" + movieId +
                 ", price=" + price +
                 '}';
     }
@@ -101,15 +101,15 @@ public class Show implements Serializable {
         if (this == o) return true;
         if (!(o instanceof Show)) return false;
         Show show = (Show) o;
-        return getMovie_id() == show.getMovie_id() &&
+        return getMovieId() == show.getMovieId() &&
                 getPrice() == show.getPrice() &&
                 Objects.equals(getCity(), show.getCity()) &&
-                Objects.equals(getStart_date(), show.getStart_date()) &&
-                Objects.equals(getEnd_date(), show.getEnd_date());
+                Objects.equals(getStartDate(), show.getStartDate()) &&
+                Objects.equals(getEndDate(), show.getEndDate());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getCity(), getStart_date(), getEnd_date(), getMovie_id(), getPrice());
+        return Objects.hash(getCity(), getStartDate(), getEndDate(), getMovieId(), getPrice());
     }
 }

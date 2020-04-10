@@ -22,6 +22,11 @@ public class ShowController {
         return showRepository.findAll();
     }
 
+    @GetMapping("/shows/{movieId}")
+    public List<Show> searchForMovie(@PathVariable Long movieId) {
+        return showRepository.findByMovieId(movieId);
+    }
+
     @PostMapping("/shows")
     public Show createShow(@Valid @RequestBody Show show) {
         return showRepository.save(show);
@@ -31,9 +36,9 @@ public class ShowController {
     public Show updateShow(@PathVariable Long showId, @Valid @RequestBody Show showRequest) {
         return showRepository.findById(showId).map(show -> {
             show.setCity(showRequest.getCity());
-            show.setStart_date(showRequest.getStart_date());
-            show.setEnd_date(showRequest.getEnd_date());
-            show.setMovie_id(showRequest.getMovie_id());
+            show.setStartDate(showRequest.getStartDate());
+            show.setEndDate(showRequest.getEndDate());
+            show.setMovieId(showRequest.getMovieId());
             show.setPrice(showRequest.getPrice());
             return showRepository.save(show);
         }).orElseThrow(() -> new ResourceNotFoundException("ShowId " + showId + " not found"));
