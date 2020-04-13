@@ -1,0 +1,39 @@
+{
+  "generator-ngx-rocket": {
+    "version": "8.0.1",
+    "props": {
+      "location": "path",
+      "strict": false,
+      "skipInstall": false,
+      "skipQuickstart": false,
+      "initGit": true,
+      "usePrefix": true,
+      "appName": "CineCity",
+      "target": [
+        "web"
+      ],
+      "pwa": true,
+      "ui": "material",
+      "layout": "simple",
+      "auth": true,
+      "lazy": true,
+      "angulartics": true,
+      "languages": [
+        "en-US",
+        "fr-FR"
+      ],
+      "analyticsProvider": "ga",
+      "googleAnalyticsAccount": "",
+      "tools": [
+        "prettier",
+        "hads"
+      ],
+      "utility": [],
+      "deploy": "none",
+      "projectName": "cine-city",
+      "packageManager": "npm",
+      "mobile": [],
+      "desktop": []
+    }
+  }
+}
