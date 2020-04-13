@@ -1,4 +1,4 @@
-package com.cinecity.controller;
+package com.cinecity.controller.crud;
 
 import com.cinecity.entities.Show;
 import com.cinecity.exception.ResourceNotFoundException;
