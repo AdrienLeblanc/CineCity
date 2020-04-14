@@ -4,7 +4,6 @@ import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { merge } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import { environment } from '@env/environment';
 import { Logger, untilDestroyed } from '@core';
@@ -23,9 +22,6 @@ export class AppComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
     private translateService: TranslateService,
-    // do not remove the analytics injection, even if the call in ngOnInit() is removed
-    // this injection initializes page tracking through the router
-    private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
     private i18nService: I18nService
   ) {}
 
@@ -36,9 +32,6 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     log.debug('init');
-
-    this.angulartics2GoogleAnalytics.startTracking();
-    this.angulartics2GoogleAnalytics.eventTrack(environment.version, { category: 'App initialized' });
 
     // Setup translations
     this.i18nService.init(environment.defaultLanguage, environment.supportedLanguages);
