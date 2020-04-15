@@ -1,23 +1,33 @@
 package com.cinecity.entities.dto.movie;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import java.util.Date;
 
 public class Movie implements Serializable {
 
     private Long popularity;
+    @JsonProperty("vote_count")
     private Long voteCount;
     private Boolean video;
+    @JsonProperty("poster_path")
     private String posterPath;
     private Long id;
     private Boolean adult;
+    @JsonProperty("backdrop_path")
     private String backdropPath;
+    @JsonProperty("original_language")
     private String originalLanguage;
+    @JsonProperty("original_title")
     private String originalTitle;
+    @JsonProperty("genre_ids")
     private Long[] genreIds;
     private String title;
+    @JsonProperty("vote_average")
     private Double voteAverage;
     private String overview;
+    @JsonProperty("release_date")
     private Date releaseDate;
 
     public Movie() {

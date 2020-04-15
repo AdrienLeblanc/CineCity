@@ -1,23 +1,30 @@
 package com.cinecity.entities.dto.movie;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
 import java.io.Serializable;
 
 public class PopularMovies implements Serializable {
 
-    private Long id;
+    private Long page;
+
+    @JsonProperty("total_results")
     private Long totalResults;
+
+    @JsonProperty("total_pages")
     private Long totalPages;
     private Movie[] results;
 
     public PopularMovies() {
     }
 
-    public Long getId() {
-        return id;
+    public Long getPage() {
+        return page;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPage(Long page) {
+        this.page = page;
     }
 
     public Long getTotalResults() {

@@ -1,4 +1,5 @@
 com\cinecity\controller\crud\ShowController.class
+com\cinecity\exception\IncorrectLoginException.class
 com\cinecity\controller\crud\UserController.class
 com\cinecity\repository\CityRepository.class
 com\cinecity\entities\dto\movie\Movie.class
@@ -21,4 +22,5 @@ com\cinecity\Application.class
 com\cinecity\entities\model\Show.class
 com\cinecity\controller\crud\ReservationController.class
 com\cinecity\entities\dto\movie\Genre.class
+com\cinecity\controller\services\servicesUtils\ParameterStringBuilder.class
 com\cinecity\controller\services\AuthentificationService.class

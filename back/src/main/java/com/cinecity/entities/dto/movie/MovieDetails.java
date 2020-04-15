@@ -1,34 +1,47 @@
 package com.cinecity.entities.dto.movie;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import java.util.Date;
 
 public class MovieDetails implements Serializable {
 
     private Boolean adult;
+    @JsonProperty("backdrop_path")
     private String backdropPath;
+    @JsonProperty("belongs_to_collection")
     private Boolean belongsToCollection;
     private Long budget;
     private Genre[] genres;
     private String homepage;
     private Long id;
     private String imdbId;
+    @JsonProperty("original_language")
     private String originalLanguage;
+    @JsonProperty("original_title")
     private String originalTitle;
     private String overview;
     private Long popularity;
+    @JsonProperty("poster_path")
     private String posterPath;
+    @JsonProperty("production_companies")
     private ProductionCompanies[] productionCompanies;
+    @JsonProperty("production_countries")
     private ProductionCountries[] productionCountries;
+    @JsonProperty("release_date")
     private Date releaseDate;
     private Long revenue;
     private Long runtime;
+    @JsonProperty("spoken_languages")
     private SpokenLanguages spokenLanguages;
     private String status;
     private String tagline;
     private String title;
     private Boolean video;
+    @JsonProperty("vote_average")
     private Double voteAverage;
+    @JsonProperty("vote_count")
     private Long voteCount;
 
     public MovieDetails() {

@@ -1,12 +1,16 @@
 package com.cinecity.entities.dto.movie;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 
 public class ProductionCompanies implements Serializable {
 
     private Long id;
+    @JsonProperty("logo_path")
     private String logoPath;
     private String name;
+    @JsonProperty("origin_country")
     private String originCountry;
 
     public ProductionCompanies() {
