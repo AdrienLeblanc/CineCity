@@ -1,6 +1,7 @@
 package com.cinecity.controller.services;
 
 import com.cinecity.controller.services.servicesUtils.HttpUtils;
+import com.cinecity.entities.dto.movie.MovieDetails;
 import com.cinecity.entities.dto.movie.PopularMovies;
 import com.cinecity.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class ExternalMoviesService {
     private final String urlPopularMovies = "https://api.themoviedb.org/3/movie/popular";
     private final String apiKey = "1e3cf7552b75cb125158e15468ee6b46";
 
-    @GetMapping("/movies/{pageId}")
+    @GetMapping("/movies/popular/{pageId}")
     public PopularMovies getPopularMovies(@PathVariable Long pageId) {
 
         MultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
@@ -30,5 +31,15 @@ public class ExternalMoviesService {
         parameters.put("page", Collections.singletonList(String.valueOf(pageId)));
 
         return HttpUtils.httpGetBuilder("api.themoviedb.org", "/3/movie/popular", parameters, PopularMovies.class);
+    }
+
+    @GetMapping("/movies/{movieId}/details")
+    public MovieDetails getMovieDetails(@PathVariable Long movieId) {
+
+        MultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
+        parameters.put("api_key", Collections.singletonList(apiKey));
+        parameters.put("language", Collections.singletonList("fr-FR"));
+
+        return HttpUtils.httpGetBuilder("api.themoviedb.org", "/3/movie/" + movieId, parameters, MovieDetails.class);
     }
 }
