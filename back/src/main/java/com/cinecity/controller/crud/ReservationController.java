@@ -1,6 +1,6 @@
 package com.cinecity.controller.crud;
 
-import com.cinecity.entities.Reservation;
+import com.cinecity.entities.model.Reservation;
 import com.cinecity.exception.ResourceNotFoundException;
 import com.cinecity.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;

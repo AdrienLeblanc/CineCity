@@ -1,7 +1,7 @@
 package com.cinecity.controller.services;
 
-import com.cinecity.entities.User;
-import com.cinecity.entities.dto.Login;
+import com.cinecity.entities.model.User;
+import com.cinecity.entities.dto.auth.Login;
 import com.cinecity.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;

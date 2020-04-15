@@ -1,6 +1,6 @@
 package com.cinecity.repository;
 
-import com.cinecity.entities.User;
+import com.cinecity.entities.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

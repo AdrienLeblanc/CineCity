@@ -1,6 +1,6 @@
 package com.cinecity.controller.crud;
 
-import com.cinecity.entities.User;
+import com.cinecity.entities.model.User;
 import com.cinecity.exception.ResourceNotFoundException;
 import com.cinecity.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

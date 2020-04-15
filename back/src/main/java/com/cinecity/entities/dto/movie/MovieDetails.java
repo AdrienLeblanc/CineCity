@@ -1,9 +1,9 @@
-package com.cinecity.entities.dto;
+package com.cinecity.entities.dto.movie;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class Movie implements Serializable {
+public class MovieDetails implements Serializable {
 
     private Boolean adult;
     private String backdropPath;
@@ -31,7 +31,7 @@ public class Movie implements Serializable {
     private Double voteAverage;
     private Long voteCount;
 
-    public Movie() {
+    public MovieDetails() {
     }
 
     public Boolean getAdult() {

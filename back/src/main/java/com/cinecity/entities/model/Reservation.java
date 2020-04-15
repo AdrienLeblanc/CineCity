@@ -1,4 +1,4 @@
-package com.cinecity.entities;
+package com.cinecity.entities.model;
 
 import javax.persistence.*;
 import java.io.Serializable;

@@ -1,6 +1,6 @@
 package com.cinecity.controller.crud;
 
-import com.cinecity.entities.Show;
+import com.cinecity.entities.model.Show;
 import com.cinecity.exception.ResourceNotFoundException;
 import com.cinecity.repository.ShowRepository;
 import org.springframework.beans.factory.annotation.Autowired;

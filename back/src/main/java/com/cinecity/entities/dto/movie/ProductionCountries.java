@@ -1,4 +1,4 @@
-package com.cinecity.entities.dto;
+package com.cinecity.entities.dto.movie;
 
 import java.io.Serializable;
 
