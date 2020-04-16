@@ -1,4 +1,4 @@
-package com.cinecity.entities.dto.movie;
+package com.cinecity.entities.dto.movie.multisearch;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

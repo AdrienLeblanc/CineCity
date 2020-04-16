@@ -1,6 +1,7 @@
-package com.cinecity.entities.dto.movie;
+package com.cinecity.entities.dto.movie.multisearch;
 
 
+import com.cinecity.entities.dto.movie.popular.PopularMovie;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -12,7 +13,7 @@ import java.io.Serializable;
         include = JsonTypeInfo.As.PROPERTY,
         property = "media_type")
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = Movie.class, name = "movie"),
+        @JsonSubTypes.Type(value = PopularMovie.class, name = "movie"),
         @JsonSubTypes.Type(value = TvShow.class, name = "tv"),
         @JsonSubTypes.Type(value = Person.class, name = "person")
 })

@@ -1,9 +1,9 @@
 package com.cinecity.controller.services;
 
 import com.cinecity.controller.services.servicesUtils.HttpUtils;
-import com.cinecity.entities.dto.movie.MovieDetails;
-import com.cinecity.entities.dto.movie.MultiSearch;
-import com.cinecity.entities.dto.movie.PopularMovies;
+import com.cinecity.entities.dto.movie.details.MovieDetails;
+import com.cinecity.entities.dto.movie.multisearch.MultiSearch;
+import com.cinecity.entities.dto.movie.popular.PopularResults;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,14 +18,14 @@ public class ExternalMoviesService {
     private final String apiKey = "1e3cf7552b75cb125158e15468ee6b46";
 
     @GetMapping("/movies/popular/{pageId}")
-    public PopularMovies getPopularMovies(@PathVariable Long pageId) {
+    public PopularResults getPopularResults(@PathVariable Long pageId) {
 
         MultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
         parameters.put("api_key", Collections.singletonList(apiKey));
         parameters.put("language", Collections.singletonList("fr-FR"));
         parameters.put("page", Collections.singletonList(String.valueOf(pageId)));
 
-        return HttpUtils.httpGetBuilder("api.themoviedb.org", "/3/movie/popular", parameters, PopularMovies.class);
+        return HttpUtils.httpGetBuilder("api.themoviedb.org", "/3/movie/popular", parameters, PopularResults.class);
     }
 
     @GetMapping("/movies/{movieId}/details")

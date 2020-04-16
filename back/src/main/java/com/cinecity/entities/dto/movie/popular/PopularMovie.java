@@ -1,34 +1,46 @@
-package com.cinecity.entities.dto.movie;
+package com.cinecity.entities.dto.movie.popular;
 
+import com.cinecity.entities.dto.movie.multisearch.CinematographicWork;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import java.util.Date;
 
-public class TvShow extends CinematographicWork {
+@JsonTypeName("movie")
+public class PopularMovie {
 
+    private Long id;
     private Long popularity;
     @JsonProperty("vote_count")
     private Long voteCount;
+    private Boolean video;
     @JsonProperty("poster_path")
     private String posterPath;
+    private Boolean adult;
     @JsonProperty("backdrop_path")
     private String backdropPath;
     @JsonProperty("original_language")
     private String originalLanguage;
-    @JsonProperty("original_name")
-    private String originalName;
+    @JsonProperty("original_title")
+    private String originalTitle;
     @JsonProperty("genre_ids")
     private Long[] genreIds;
-    private String name;
+    private String title;
     @JsonProperty("vote_average")
     private Double voteAverage;
     private String overview;
-    @JsonProperty("first_air_date")
-    private Date firstAirDate;
-    @JsonProperty("origin_country")
-    private String originCountry;
+    @JsonProperty("release_date")
+    private Date releaseDate;
 
-    public TvShow() {
+    public PopularMovie() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getPopularity() {
@@ -47,12 +59,28 @@ public class TvShow extends CinematographicWork {
         this.voteCount = voteCount;
     }
 
+    public Boolean getVideo() {
+        return video;
+    }
+
+    public void setVideo(Boolean video) {
+        this.video = video;
+    }
+
     public String getPosterPath() {
         return posterPath;
     }
 
     public void setPosterPath(String posterPath) {
         this.posterPath = posterPath;
+    }
+
+    public Boolean getAdult() {
+        return adult;
+    }
+
+    public void setAdult(Boolean adult) {
+        this.adult = adult;
     }
 
     public String getBackdropPath() {
@@ -71,12 +99,12 @@ public class TvShow extends CinematographicWork {
         this.originalLanguage = originalLanguage;
     }
 
-    public String getOriginalName() {
-        return originalName;
+    public String getOriginalTitle() {
+        return originalTitle;
     }
 
-    public void setOriginalName(String originalName) {
-        this.originalName = originalName;
+    public void setOriginalTitle(String originalTitle) {
+        this.originalTitle = originalTitle;
     }
 
     public Long[] getGenreIds() {
@@ -87,12 +115,12 @@ public class TvShow extends CinematographicWork {
         this.genreIds = genreIds;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Double getVoteAverage() {
@@ -111,19 +139,11 @@ public class TvShow extends CinematographicWork {
         this.overview = overview;
     }
 
-    public Date getFirstAirDate() {
-        return firstAirDate;
+    public Date getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setFirstAirDate(Date firstAirDate) {
-        this.firstAirDate = firstAirDate;
-    }
-
-    public String getOriginCountry() {
-        return originCountry;
-    }
-
-    public void setOriginCountry(String originCountry) {
-        this.originCountry = originCountry;
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }
