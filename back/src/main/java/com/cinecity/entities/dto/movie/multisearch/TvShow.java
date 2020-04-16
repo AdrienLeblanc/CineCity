@@ -26,7 +26,7 @@ public class TvShow extends CinematographicWork {
     @JsonProperty("first_air_date")
     private Date firstAirDate;
     @JsonProperty("origin_country")
-    private String originCountry;
+    private  String[] originCountry;
 
     public TvShow() {
     }
@@ -119,11 +119,11 @@ public class TvShow extends CinematographicWork {
         this.firstAirDate = firstAirDate;
     }
 
-    public String getOriginCountry() {
+    public String[] getOriginCountry() {
         return originCountry;
     }
 
-    public void setOriginCountry(String originCountry) {
+    public void setOriginCountry(String[] originCountry) {
         this.originCountry = originCountry;
     }
 }

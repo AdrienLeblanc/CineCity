@@ -1,15 +1,11 @@
-package com.cinecity.entities.dto.movie;
+package com.cinecity.entities.dto.movie.multisearch;
 
-import com.cinecity.entities.dto.movie.multisearch.CinematographicWork;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 
 public class Movie extends CinematographicWork {
 
-    private Long id;
-    @JsonProperty("media_type")
-    private String mediaType;
     private Long popularity;
     @JsonProperty("vote_count")
     private Long voteCount;
@@ -33,22 +29,6 @@ public class Movie extends CinematographicWork {
     private Date releaseDate;
 
     public Movie() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getMediaType() {
-        return mediaType;
-    }
-
-    public void setMediaType(String mediaType) {
-        this.mediaType = mediaType;
     }
 
     public Long getPopularity() {

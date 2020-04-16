@@ -47,6 +47,6 @@ public class ExternalMoviesService {
         parameters.put("query", Collections.singletonList(query));
         parameters.put("page", Collections.singletonList(String.valueOf(pageId)));
 
-        return HttpUtils.httpGetBuilder("api.themoviedb.org", "/3/search/multi/", parameters, MultiSearch.class);
+        return HttpUtils.httpGetBuilder("api.themoviedb.org", "/3/search/multi", parameters, MultiSearch.class);
     }
 }

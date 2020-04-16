@@ -37,7 +37,6 @@ public class HttpUtils {
 
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String json = in.lines().collect(Collectors.joining("\n"));
-            System.out.println("Resultat : \n" + json);
 
             ObjectMapper objectMapper = new ObjectMapper();
             T result = objectMapper.readValue(json, type);
