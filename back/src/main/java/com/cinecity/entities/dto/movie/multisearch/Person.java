@@ -12,6 +12,8 @@ public class Person extends MediaType {
     @JsonProperty("known_for_department")
     private String knownForDepartment;
     private String name;
+    private Long popularity;
+    private Long gender;
 
     public String getProfilePath() {
         return profilePath;
@@ -51,5 +53,21 @@ public class Person extends MediaType {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getPopularity() {
+        return popularity;
+    }
+
+    public void setPopularity(Long popularity) {
+        this.popularity = popularity;
+    }
+
+    public Long getGender() {
+        return gender;
+    }
+
+    public void setGender(Long gender) {
+        this.gender = gender;
     }
 }
