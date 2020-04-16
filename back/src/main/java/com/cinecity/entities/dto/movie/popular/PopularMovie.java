@@ -1,19 +1,21 @@
-package com.cinecity.entities.dto.movie;
+package com.cinecity.entities.dto.movie.popular;
 
+import com.cinecity.entities.dto.movie.multisearch.CinematographicWork;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class Movie implements Serializable {
+@JsonTypeName("movie")
+public class PopularMovie {
 
+    private Long id;
     private Long popularity;
     @JsonProperty("vote_count")
     private Long voteCount;
     private Boolean video;
     @JsonProperty("poster_path")
     private String posterPath;
-    private Long id;
     private Boolean adult;
     @JsonProperty("backdrop_path")
     private String backdropPath;
@@ -30,7 +32,15 @@ public class Movie implements Serializable {
     @JsonProperty("release_date")
     private Date releaseDate;
 
-    public Movie() {
+    public PopularMovie() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getPopularity() {
@@ -63,14 +73,6 @@ public class Movie implements Serializable {
 
     public void setPosterPath(String posterPath) {
         this.posterPath = posterPath;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Boolean getAdult() {
