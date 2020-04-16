@@ -16,6 +16,7 @@ public class MovieDetails implements Serializable {
     private Genre[] genres;
     private String homepage;
     private Long id;
+    @JsonProperty("imdb_id")
     private String imdbId;
     @JsonProperty("original_language")
     private String originalLanguage;
@@ -34,7 +35,7 @@ public class MovieDetails implements Serializable {
     private Long revenue;
     private Long runtime;
     @JsonProperty("spoken_languages")
-    private SpokenLanguages spokenLanguages;
+    private SpokenLanguages[] spokenLanguages;
     private String status;
     private String tagline;
     private String title;
@@ -191,11 +192,11 @@ public class MovieDetails implements Serializable {
         this.runtime = runtime;
     }
 
-    public SpokenLanguages getSpokenLanguages() {
+    public SpokenLanguages[] getSpokenLanguages() {
         return spokenLanguages;
     }
 
-    public void setSpokenLanguages(SpokenLanguages spokenLanguages) {
+    public void setSpokenLanguages(SpokenLanguages[] spokenLanguages) {
         this.spokenLanguages = spokenLanguages;
     }
 
