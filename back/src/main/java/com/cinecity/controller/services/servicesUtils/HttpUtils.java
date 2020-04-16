@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.stream.Collectors;
 
 public class HttpUtils {
 
@@ -26,6 +27,7 @@ public class HttpUtils {
                     .queryParams(parameters)
                     .build();
 
+            System.out.println(uriComponents.toUriString());
             URL url = new URL(uriComponents.toUriString());
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod(RequestMethod.GET.name());
@@ -34,7 +36,11 @@ public class HttpUtils {
             con.setReadTimeout(5000);
 
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            T result = new ObjectMapper().readValue(in, type);
+            String json = in.lines().collect(Collectors.joining("\n"));
+            System.out.println("Resultat : \n" + json);
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            T result = objectMapper.readValue(json, type);
             con.disconnect();
 
             return result;

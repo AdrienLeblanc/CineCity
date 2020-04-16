@@ -1,16 +1,22 @@
 package com.cinecity.entities.dto.movie;
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import java.io.Serializable;
 
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "media_type")
 @JsonSubTypes({
-        @JsonSubTypes.Type(Movie.class),
-        @JsonSubTypes.Type(TvShow.class),
-        @JsonSubTypes.Type(Person.class)
+        @JsonSubTypes.Type(value = Movie.class, name = "movie"),
+        @JsonSubTypes.Type(value = TvShow.class, name = "tv"),
+        @JsonSubTypes.Type(value = Person.class, name = "person")
 })
-public class MediaType implements Serializable {
+public abstract class MediaType implements Serializable {
 
     private Long id;
     @JsonProperty("media_type")

@@ -1,9 +1,11 @@
 package com.cinecity.entities.dto.movie;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import java.util.Date;
 
+@JsonTypeName("movie")
 public class Movie extends CinematographicWork {
 
     private Long popularity;
